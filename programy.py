@@ -13,3 +13,8 @@ c = a + b
 print(c)
 print(type(a))
 print(c.zamien_na_euro())
+
+
+
+class WebDriver():
+    pass

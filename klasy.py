@@ -82,3 +82,4 @@ print(adam)
 print(ewa)
 
 abel = Dziecko("Abel", "M")
+print(abel.plec)
