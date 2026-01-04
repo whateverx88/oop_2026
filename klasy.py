@@ -4,6 +4,7 @@ class Czlowiek:
     #aAtrybuty klasy
     # cechy wspolne kazdego czlowieka
     gatunek = "Homo Sapiens"
+
     def __init__(self, imie, plec): #atrbuty OBIEKTU (skladniki potrawy)
     #Cechy konkretnej osoby
     #Konstruktor
@@ -15,6 +16,9 @@ class Czlowiek:
         #adam.imie = "Adam"
         #ewa.imie = "Ewa"
 
+    def __add__(self, other):
+        pass
+
     #metoda
     #moznosc, mozliwosc, zdolnosc
     def przedstaw_sie(self):
@@ -23,6 +27,7 @@ class Czlowiek:
             print("mezczyzna")
         else:
             print("kobieta")
+
     def przedstaw(self, osoba):
         print(f"Oto {osoba.imie}. {osoba.imie} jest ", end="")
         if osoba.plec=="M":
@@ -30,9 +35,18 @@ class Czlowiek:
         else:
             print("kobieta")
 
+
 class Dziecko(Czlowiek):
+    def __init__(self, imie, plec):
+        print(f"Powstaje Dziecko o iminie {imie}")
+        super().__init__(imie, plec)
+
+    def __str__(self):
+        return f"Dziecko {self.imie} {self.plec}"
+
     def baw_sie(self):
         print("Ale zabawa, juhuuu!!!")
+
     def przedstaw_sie(self):
         print(f"Cesc, jestem {self.imie}. jestem ", end="")
         if self.plec=="M":
@@ -53,6 +67,18 @@ print(ewa.gatunek)
 print(ewa.imie)
 print(adam.imie)
 ewa.przedstaw_sie()
-ewa.przedstaw(mariola)
+ewa.przedstaw(kain)
 kain.przedstaw_sie()
+kain.przedstaw(adam)
 kain.baw_sie()
+print(dir(Czlowiek))
+print(dir(adam))
+print(dir(kain))
+print(Czlowiek)
+print(kain)
+print(str(kain))
+print(kain.__str__())
+print(adam)
+print(ewa)
+
+abel = Dziecko("Abel", "M")
